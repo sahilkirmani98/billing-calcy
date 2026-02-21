@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Equally - Dynamic Bill Splitter</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="background-mesh">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+  </div>
+
+  <main class="app-container glass-panel">
+    <header>
+      <h1>Equally</h1>
+      <p>Split smarter, not harder.</p>
+    </header>
+
+    <div class="input-section">
+      <div class="amount-wrapper">
+        <span class="currency-symbol">$</span>
+        <input type="number" id="billTotal" placeholder="0.00" value="" min="0" step="0.01">
+      </div>
+    </div>
+
+    <div class="slider-section">
+      <div class="slider-header">
+        <label for="tipSlider">Tip</label>
+        <span id="tipPercentageDisplay" class="highlight-text">15%</span>
+      </div>
+      <input type="range" id="tipSlider" min="0" max="50" value="15" step="1" class="styled-slider">
+    </div>
+
+    <div class="summary-section">
+      <div class="summary-item">
+        <span>Tip Amount</span>
+        <span id="tipAmountDisplay">$0.00</span>
+      </div>
+      <div class="summary-item total">
+        <span>Total Bill</span>
+        <span id="grandTotalDisplay">$0.00</span>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="split-section">
+      <div class="split-header">
+        <h2>Split Among</h2>
+        <button id="addPersonBtn" class="primary-btn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+          Add Person
+        </button>
+      </div>
+      
+      <div id="peopleList" class="people-list">
+        <!-- Dynamic person cards will be spawned here -->
+      </div>
+      
+      <div class="split-footer">
+        <span id="leftoverWarning" class="warning-text hidden">Amounts don't add up to total!</span>
+      </div>
+    </div>
+  </main>
+
+  <script src="main.js"></script>
+</body>
+</html>
